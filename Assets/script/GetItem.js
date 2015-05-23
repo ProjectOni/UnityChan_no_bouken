@@ -6,6 +6,11 @@ function OnTriggerEnter (collider : Collider) {
 		Destroy(this.gameObject);
 		return;
 	}
+	Debug.Log("capsule");
+}
+
+function OnCollisionEnter(collision: Collision) {
+	Destroy(gameObject);
 }
 
 function OnTriggerExit (collider : Collider) {
