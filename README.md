@@ -1,2 +1,5 @@
 # UnityChan_no_bouken
-おに
+
+## 導入アセット
+FightingUnityChan_FreeAsset
+UnityChan
