@@ -3,8 +3,8 @@ using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
 	public GameObject objectPrefab;
-	string ip = "127.0.0.1";
-	string port = "1192";
+	string ip = CreateTitleButton.ip;
+	string port = CreateTitleButton.port;
 	bool connected = false;
 	
 	private void CreatePlayer()
