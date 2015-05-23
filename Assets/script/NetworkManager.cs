@@ -3,20 +3,24 @@ using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
 	public GameObject objectPrefab;
+	public static Object unitychan;
 	string ip = "127.0.0.1";
 	string port = "1192";
 	bool connected = false;
 	
 	private void CreatePlayer()
 	{
+		//DontDestroyOnLoad(objectPrefab);
 		connected = true;
-		Network.Instantiate(objectPrefab, objectPrefab.transform.position, objectPrefab.transform.rotation, 1);
+		Application.LoadLevel (1);
+		//DontDestroyOnLoad(Network.Instantiate(objectPrefab, objectPrefab.transform.position, objectPrefab.transform.rotation, 1));
+		unitychan = Network.Instantiate(objectPrefab, objectPrefab.transform.position, objectPrefab.transform.rotation, 1); 
+		DontDestroyOnLoad (unitychan);
 	}
 	
 	public void OnConnectedToServer()
 	{
-		connected = true;
-		Network.Instantiate(objectPrefab, objectPrefab.transform.position, objectPrefab.transform.rotation, 1);
+		CreatePlayer();
 	}
 	
 	public void OnServerInitialized()
@@ -40,6 +44,8 @@ public class NetworkManager : MonoBehaviour {
 		}
 	}
 
-	void Start () {}
+	void Start () {
+		DontDestroyOnLoad (this);
+	}
 	void Update () {}
 }
