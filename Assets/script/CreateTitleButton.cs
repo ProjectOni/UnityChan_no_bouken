@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CreateTitleButton : MonoBehaviour {
-	static public bool isClient = true;
+	static public bool isClient = false;
 	static public string ip = "127.0.0.1";
 	static public string port = "1192";
 
