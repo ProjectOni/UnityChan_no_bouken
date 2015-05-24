@@ -3,13 +3,14 @@ using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
 	public GameObject objectPrefab;
+	public static GameObject obj;
 	string ip = CreateTitleButton.ip;
 	string port = CreateTitleButton.port;
 	bool connected = false;
 	
 	private void CreatePlayer()
 	{
-		Network.Instantiate(objectPrefab, objectPrefab.transform.position, objectPrefab.transform.rotation, 1); 
+		obj = Network.Instantiate(objectPrefab, objectPrefab.transform.position, objectPrefab.transform.rotation, 1) as GameObject; 
 	}
 
 	public void OnConnectedToServer()
