@@ -18,10 +18,16 @@ public class SimpleFollowCamera : MonoBehaviour {
 	}
 	
 	void Update () {
+		Vector3 lookVector;
 
-		this.transform.position = NetworkManager.obj.transform.position + distance;
-		
-		Vector3 lookVector = NetworkManager.obj.transform.position + lookPoint - this.transform.position;
+		if (NetworkManager.obj) {
+			this.transform.position = NetworkManager.obj.transform.position + distance;
+			lookVector = NetworkManager.obj.transform.position + lookPoint - this.transform.position;
+		} else {
+			this.transform.position = target.transform.position + distance;
+			lookVector = target.transform.position + lookPoint - this.transform.position;
+		}
+
 		this.transform.rotation = Quaternion.LookRotation(lookVector);
 	}
 }
