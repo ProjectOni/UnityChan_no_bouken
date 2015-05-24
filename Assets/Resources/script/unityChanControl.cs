@@ -11,7 +11,7 @@ public class unityChanControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GetComponent<NetworkView>().isMine) {
+//		if (GetComponent<NetworkView>().isMine) {
 						//  run & turn
 						if (Input.GetKey ("up")) {
 								animator.SetBool ("is_run", true);
@@ -49,5 +49,5 @@ public class unityChanControl : MonoBehaviour {
 						}
 				}
 
-	}
+//	}
 }
